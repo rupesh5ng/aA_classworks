@@ -4,29 +4,66 @@
 require "singleton"
 class Piece
 
-    def initialize(color)
-
-        @name = name
-        # @pos = pos
+    def initialize(color,board,pos=[])
+        @color =color
+        @board = Board.new()
+        @pos = pos
         
     end
    #  A key method of Piece is #moves, which should return an array of places a Piece can move to. Of course, every piece will move differently, so you can't write (implement) the #moves method of Piece without subclasses.
-   def move(pos)
+   
+   def to_s
 
    end 
+
+   def empty?
+   end
+
+   def valid_moves
+   end
+
+   def pos=(val)
+   end
+   
+   def symbol
+   end
+
+   def move_into_check?(end_pos)
+
+   end
 end
+
+
 # You should make modules for Slideable and Stepable. The Slideable module can implement #moves, but it needs to know what directions a piece can move in (diagonal, horizontally/vertically, both). Classes that include the module Slideable (Bishop/Rook/Queen) will need to implement a method #move_dirs, which #moves will use.
 
 module Slideable 
+    HORIZONTAL_DIRS =[]
+    DIAGONAL_DIRS = []
+
+
+    def horizontal_dir
+    end
+
+    def diagonal_dirs 
+    end
+    def moves 
+    end
+
+    private
+
     def move_dirs
     end
+
+    def grow_unblocked_moves_in_dir(dx,dy)
+    end
+
 end
 
 module Stepable
 
 end
 
-def 
+
 
 class NullPiece < Piece
   include Singleton 

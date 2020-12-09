@@ -14,8 +14,8 @@ require_relative "./piece.rb"
 
 class Board
 
-    def initialize
-        @grid = Array.new(8) {Array.new(8)}
+    def initialize(grid= Array.new(8) {Array.new(8)})
+        @grid = grid
         @null_piece = NullPiece.instance
         populate
     end
@@ -35,7 +35,7 @@ class Board
 
     end
 
-    def move_piece(start_pos, end_pos)
+    def move_piece(color,start_pos, end_pos)
         raise "there is no piece at start_pos" if @grid[start_pos] = @null_piece 
         # raise "the piece cannot move to end_pos"     #### we need white and black
 
