@@ -22,5 +22,13 @@ end
 # p arr.two_sum
 
 def my_transpose(matrix)
-    
+    l = matrix.length
+    new_matrix = Array.new(l) {Array.new(l)}
+    (0...l).each do |i|
+        (0...l).each do |j|
+            new_matrix[i][j] = matrix[j][i]
+        end
+    end
+    new_matrix
 end
+
