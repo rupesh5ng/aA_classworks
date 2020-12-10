@@ -64,3 +64,17 @@ describe "my_transpose" do
 
 
 end
+
+describe 'stock_picker' do
+    subject(:stock_prices) {[5, 7, 4, 9, 7, 5, 7, 2, 1, 8, 3]}
+    it 'gives the most profitable pair of days' do 
+        expect(stock_picker(stock_prices)).to eq([8, 9])
+    end
+end
+
+
+
+
+
+
+stock_prices = [5, 7, 4, 9, 7, 5, 7,2,1,8,3]

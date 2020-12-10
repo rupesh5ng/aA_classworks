@@ -32,3 +32,16 @@ def my_transpose(matrix)
     new_matrix
 end
 
+def stock_picker(stock_prices)
+    l = stock_prices.length
+    (0...l).each do |i|
+        (i + 1...l).each do |j|
+            pair = [i, j]
+            max = stock_prices[j] - stock_prices[i]
+            if max < stock_prices[j] - stock_prices[i]
+                pair = [i, j]
+                max = stock_prices[j] - stock_prices[i]
+            end
+        end
+    end
+end
