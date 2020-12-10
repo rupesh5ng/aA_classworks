@@ -34,14 +34,18 @@ end
 
 def stock_picker(stock_prices)
     l = stock_prices.length
-    (0...l).each do |i|
-        (i + 1...l).each do |j|
-            pair = [i, j]
-            max = stock_prices[j] - stock_prices[i]
-            if max < stock_prices[j] - stock_prices[i]
-                pair = [i, j]
+  
+    pair = [0,1]
+    max = stock_prices[1] - stock_prices[0]
+    (0...l - 1).each do |i|
+        (i+1...l).each do |j|
+            if max <  stock_prices[j] - stock_prices[i]
                 max = stock_prices[j] - stock_prices[i]
+                pair = [i,j]
             end
         end
     end
+    pair
+
 end
+
