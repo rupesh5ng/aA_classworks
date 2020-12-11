@@ -12,20 +12,20 @@
 
 require "byebug"
 # n^2
-# def my_min(arr)
+def my_min(arr)
     
-#         arr.each_with_index do |num1,i1|
-#             small = true
+        arr.each_with_index do |num1,i1|
+            small = true
             
-#             arr.each_with_index do |num2,i2|
-#                 if num2 < num1 
-#                     small = false
-#                 end
-#             end
-#             return num1 if small
-#         end
+            arr.each_with_index do |num2,i2|
+                if num2 < num1 
+                    small = false
+                end
+            end
+            return num1 if small
+        end
     
-# end
+end
 # list = [ 0, 3, 5, 4, -5, 10, 1, 90 ]
 # p my_min(list)
 
@@ -38,16 +38,16 @@ require "byebug"
 
 #O(n)
 
-# def my_min(arr)
-#     min = arr[0]
-#     arr.each do |num|
-#         if num < min
-#             min = num
-#         end
-#     end
-#     min
+def my_min(arr)
+    min = arr[0]
+    arr.each do |num|
+        if num < min
+            min = num
+        end
+    end
+    min
 
-# end
+end
 
 
 
@@ -60,18 +60,18 @@ require "byebug"
 # Phase I
 # Write a function that iterates through the array and finds all sub-arrays using nested loops. First make an array to hold all sub-arrays. Then find the sums of each sub-array and return the max.
 
-#O(2^n) b/c lookng at subsets
+#O(n^3) b/c lookng at subsets
 
-# def largest_contiguous_subsum(arr)
-#     subs = []
-#     l = arr.length
-#     (0...l).each do |i|
-#         (0...l).each do |j|   
-#             subs << arr[i..j] if arr[i..j].length > 0
-#         end
-#     end
-#     subs.map(&:sum).max
-# end
+def largest_contiguous_subsum(arr)
+    subs = []
+    l = arr.length
+    (0...l).each do |i|
+        (0...l).each do |j|   
+            subs << arr[i..j] if arr[i..j].length > 0 # n*n *(  n)  == n^3 + n
+        end
+    end
+    subs.map(&:sum).max
+end
 
 
 # list1 = [5, 3, -7]
@@ -94,14 +94,14 @@ require "byebug"
 def largest_contiguous_subsum(arr)
     # debugger
         
-        curr_sum = arr[0]
-        largest_sum = arr[0]
-    (1...arr.length).each do |i|
-        if arr[i] < 0
+        curr_sum = arr.first
+        largest_sum = arr.first
+    (1...arr.length).each do |i|  # o(n) 
+        if curr_sum < 0
             curr_sum = 0 
         end
 
-        curr_sum += arr[i]
+        curr_sum += arr[i] 
         
         if curr_sum > largest_sum 
             largest_sum = curr_sum
@@ -122,3 +122,9 @@ p largest_contiguous_subsum(list2) # => 8 (from [7, -6, 7])
 
 list3 = [-5, -1, -3]
 p largest_contiguous_subsum(list3) # => -1 (from [-1])
+
+
+                      #ary: [1, 2, -4, 4, -3, 4]
+
+# largest_contiguous_subsum [ 1 ,3 ,3, 4 ,4, 5 ]
+#        contiguious_subsum [1,  3, 0, 4, 1 ,5]
