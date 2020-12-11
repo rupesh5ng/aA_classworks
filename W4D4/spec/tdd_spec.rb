@@ -73,8 +73,64 @@ describe 'stock_picker' do
 end
 
 
+# describe TowerOfHanoi do
+#     describe '#initialize' do 
+#         it "initializes towers with 3 arrays" do
+#             expect(TowerOfHanoi.size) to be 3" do
+
+#             end
+#         end
+#     end
+#     subject(:tower) {|}
+# end
+
+
+# initialize(n = 3)
+# @win_condition = [*1..n]
+# (1..n) => first array
+# second array empty
+# 3rd array empty
+# [1, 2, ..n]
+# []
+# []
+
+# move(first_arr, second_arr)
+
+#     moves a piece from first to second
+# end
+
+# won?
+# if second or 3rd array = win_condition
+#     true
+# else
+#     false
+# end
+# end
+
+# def run
+
+#     until won?
+#         move
+#     end
+# end
 
 
 
+# towers = [[*1..n][][]]
+# win? method
+# move method
+#     move only onto larger disk from NON empty stack
+#     - valid_move?
+# render method
 
-stock_prices = [5, 7, 4, 9, 7, 5, 7,2,1,8,3]
+describe "move" do
+
+end
+
+describe "valid_move?" do
+
+end
+
+
+
+tower_of_hanoi(6)
