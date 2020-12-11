@@ -93,30 +93,30 @@ require "byebug"
 #  track the current sum. We'll leave the rest to you.
 def largest_contiguous_subsum(arr)
     # debugger
-    
-    (0...arr.length).each do |i|
+        
+        curr_sum = arr[0]
+        largest_sum = arr[0]
+    (1...arr.length).each do |i|
         if arr[i] < 0
-            curr_sum = arr[i]
-        else 
-            curr_sum
+            curr_sum = 0 
         end
-        largest_sum = arr[i]
+
         curr_sum += arr[i]
+        
         if curr_sum > largest_sum 
             largest_sum = curr_sum
         end
-       
     end
      largest_sum
 end
 
 
-# list1 = [5, 3, -7]
-# p largest_contiguous_subsum(list1) # => 8
+list1 = [5, 3, -7]
+p largest_contiguous_subsum(list1) # => 8
 
 
-# list2 = [2, 3, -6, 7, -6, 7]
-# p largest_contiguous_subsum(list2) # => 8 (from [7, -6, 7])
+list2 = [2, 3, -6, 7, -6, 7]
+p largest_contiguous_subsum(list2) # => 8 (from [7, -6, 7])
 
 
 
