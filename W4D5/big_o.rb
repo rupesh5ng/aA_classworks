@@ -62,28 +62,63 @@ require "byebug"
 
 #O(2^n) b/c lookng at subsets
 
+# def largest_contiguous_subsum(arr)
+#     subs = []
+#     l = arr.length
+#     (0...l).each do |i|
+#         (0...l).each do |j|   
+#             subs << arr[i..j] if arr[i..j].length > 0
+#         end
+#     end
+#     subs.map(&:sum).max
+# end
+
+
+# list1 = [5, 3, -7]
+# p largest_contiguous_subsum(list1) # => 8
+
+
+# list2 = [2, 3, -6, 7, -6, 7]
+# p largest_contiguous_subsum(list2) # => 8 (from [7, -6, 7])
+
+
+
+# list3 = [-5, -1, -3]
+# p largest_contiguous_subsum(list3) # => -1 (from [-1])
+
+# Phase II
+# Let's make a better version. Write a new function using O(n) time with O(1) memory.
+#  Keep a running tally of the largest sum. To accomplish this efficient space complexity, 
+#  consider using two variables. One variable should track the largest sum so far and another to 
+#  track the current sum. We'll leave the rest to you.
 def largest_contiguous_subsum(arr)
-    subs = []
-    l = arr.length
-    (0...l).each do |i|
-        (0...l).each do |j|   
-            subs << arr[i..j] if arr[i..j].length > 0
+    # debugger
+    
+    (0...arr.length).each do |i|
+        if arr[i] < 0
+            curr_sum = arr[i]
+        else 
+            curr_sum
         end
+        largest_sum = arr[i]
+        curr_sum += arr[i]
+        if curr_sum > largest_sum 
+            largest_sum = curr_sum
+        end
+       
     end
-    subs.map(&:sum).max
+     largest_sum
 end
 
 
-list1 = [5, 3, -7]
-p largest_contiguous_subsum(list1) # => 8
+# list1 = [5, 3, -7]
+# p largest_contiguous_subsum(list1) # => 8
 
 
-list2 = [2, 3, -6, 7, -6, 7]
-p largest_contiguous_subsum(list2) # => 8 (from [7, -6, 7])
+# list2 = [2, 3, -6, 7, -6, 7]
+# p largest_contiguous_subsum(list2) # => 8 (from [7, -6, 7])
 
-<<<<<<< HEAD
 
-=======
+
 list3 = [-5, -1, -3]
 p largest_contiguous_subsum(list3) # => -1 (from [-1])
->>>>>>> 81178dd65a818bdc59bdc14fff3fb65a78fc26c3
