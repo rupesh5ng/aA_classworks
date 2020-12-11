@@ -29,5 +29,6 @@ p first_anagram?("string","trisng")
 # and #second_anagram??
 
 def second_anagram?(string1,string2)
+    
 end
 
