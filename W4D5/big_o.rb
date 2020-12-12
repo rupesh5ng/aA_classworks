@@ -91,14 +91,15 @@ end
 #  Keep a running tally of the largest sum. To accomplish this efficient space complexity, 
 #  consider using two variables. One variable should track the largest sum so far and another to 
 #  track the current sum. We'll leave the rest to you.
+
+## o(n)- linear
 def largest_contiguous_subsum(arr)
-    # debugger
         
-        curr_sum = arr.first
-        largest_sum = arr.first
-    (1...arr.length).each do |i|  # o(n) 
+    curr_sum = arr.first
+    largest_sum = arr.first
+    (1...arr.length).each do |i|  
         if curr_sum < 0
-            curr_sum = 0 
+            curr_sum = 0 #reset
         end
 
         curr_sum += arr[i] 

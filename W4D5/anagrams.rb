@@ -9,11 +9,12 @@
 # What is the time complexity of this solution? What happens if you increase the size of 
 # the strings?
 #O(n)
-# def first_anagram?(string1,string2)
-#   new_strings =  string1.chars.permutation.to_a
-#   new_strings.include?(string2.chars)
 
-# end
+def first_anagram?(string1,string2)
+  new_strings =  string1.chars.permutation.to_a
+  new_strings.include?(string2.chars)
+
+end
 # p first_anagram?("cat", "tac")
 # p first_anagram?("string","trisng")
 # # p first_anagram?()
