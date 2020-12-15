@@ -69,15 +69,15 @@ end
 # Discuss the time complexity of your solutions together, then call over your TA to look at them.
 
 def fourth_anagram?(string1,string2)
-  hash1 = Hash.new(0)
-  hash2 = Hash.new(0)
+  hash = Hash.new(0)
+ 
   string1.each_char do |char|
-    hash1[char] += 1
+    hash[char] += 1
   end
   string2.each_char do |char|
-    hash2[char] += 1
+    hash[char] -= 1
   end
-  hash1 == hash2
+  hash.values.all? {|el| el.zero?}
   
 end
 

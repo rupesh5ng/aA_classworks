@@ -49,9 +49,8 @@ arr = [0, 1, 5, 7]
 def hash_map_two_sum(arr,target_sum)
     count = {}
     arr.each do |ele|
-        count[ele] = true
         return true if count[target_sum - ele]  
-    
+        count[ele] = true
     end
     false
 end
