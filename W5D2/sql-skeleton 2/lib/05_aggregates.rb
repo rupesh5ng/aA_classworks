@@ -95,5 +95,6 @@ end
 def populous_continents
   # List the continents that have a total population of at least 100 million.
   execute(<<-SQL)
+
   SQL
 end
