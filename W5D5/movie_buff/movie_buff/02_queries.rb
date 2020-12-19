@@ -14,7 +14,7 @@ def bad_years
   # all_yrs = Movie.pluck(:yr).uniq
   # all_yrs - yrs_with_above_8
 
-  # Movie.group(:yr).having(score: 0..8).pluck(:yr)
+  Movie.group(:yr).having("MAX(score) <=8 "").pluck(:yr)
 
 
 end
