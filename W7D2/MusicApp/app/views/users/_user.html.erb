@@ -1,0 +1,7 @@
+<li><a href=<%= user_url(user.id) %>><%= user.email%></a></li>
+
+    <ul>
+        <li>Email: <%= user.email %></li> 
+        <li>Password_digest: <%=user.password_digest %></li>
+        <li>Session_token:  <%= user.session_token %></li>
+    </ul>
