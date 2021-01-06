@@ -29,10 +29,23 @@ class UsersController < ApplicationController
         @user = User.find_by(id: params[:id])
         render :edit
     end
-    def update 
+
+    def update
+        @user = User.find(params[:id])
+
+        if @user.update(user_params)
+            redirect_to user_url(@user)
+        else
+        render :edit
+        end
     end
 
     def destroy
+        user = User.find(params[:id])
+
+        user.destroy
+
+        render json: user
     end
 
 
