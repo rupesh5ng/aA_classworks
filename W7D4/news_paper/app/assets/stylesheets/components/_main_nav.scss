@@ -1,9 +1,9 @@
 .main-nav {
   display:flex;
   justify-content: space-between;
-  background: #f00;
-  color: #fff;
-  border-bottom: 1px solid black;
+  background:white;
+  color:black;
+  border-bottom: 1px solid lightgray;
 }
 
 
@@ -24,17 +24,17 @@
   > ul {
     > li {
       display: flex;
-      padding: 5px;
+      padding: 16px;
 
     }
     i{
       font-size: 16px;
-      padding: 5px;
+      padding: 2px;
     }
   }
 
   span {
-    font-size: 20px;
+    font-size: 16px;
 
   }
 }
@@ -45,8 +45,8 @@
 
     > li {
       display: flex;
-      padding: 5px;
-      font-size: 20px;
+      padding: 16px;
+      font-size: 16px;
   
     }
 
@@ -57,8 +57,8 @@
   }
   
   i {
-    font-size: 20px;
-    padding: 5px;
+    font-size: 16px;
+    padding: 2px;
 
   }
 }
