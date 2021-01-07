@@ -1,9 +1,24 @@
 .masthead {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	 justify-content: space-between;
+	
+
 	border-bottom: 2px solid black;
 	position: relative;
+}
+
+.masthead > ul  {
+	display: flex;
+	flex-direction: row;
+	 justify-content: space-between;
+	//  padding: 4px;
+	position: relative;
+}
+
+.masthead > ul  > li{
+	display: flex;
+	padding: 4px;
 }
 
 .language-nav {
@@ -28,6 +43,13 @@
 		display: flex;
 	}
 }
+
+// .masthead > ul > li {
+// 	display: flex;
+// 	// align-items: horizontal;
+// 	justify-content: space-between;
+
+// }
 
 .logo {
 	max-width: 400px;

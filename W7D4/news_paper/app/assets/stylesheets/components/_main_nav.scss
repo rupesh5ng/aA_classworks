@@ -1,9 +1,21 @@
 .main-nav {
-
+  display:flex;
+  justify-content: space-between;
+  background: #f00;
+  color: #fff;
+  border-bottom: 1px solid black;
 }
+
+
 
 .left-nav > ul,
 .right-nav > ul {
+  display: flex;
+  justify-content: space-between;
+ 
+  
+  // align-items: ;
+
 
 }
 
@@ -11,11 +23,18 @@
 
   > ul {
     > li {
+      display: flex;
+      padding: 5px;
 
+    }
+    i{
+      font-size: 16px;
+      padding: 5px;
     }
   }
 
   span {
+    font-size: 20px;
 
   }
 }
@@ -25,20 +44,29 @@
   > ul {
 
     > li {
+      display: flex;
+      padding: 5px;
+      font-size: 20px;
   
     }
 
     > li:last-of-type {
+      font-size: 16px;
   
     }
   }
   
   i {
+    font-size: 20px;
+    padding: 5px;
 
   }
 }
 
 .left-nav > ul > li:hover,
 .right-nav > ul > li:last-of-type:hover {
-
+  
+	background-color:yellow;
+	border-color:red;
+	color:blue;
 }
